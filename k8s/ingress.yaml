@@ -1,0 +1,123 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: opengittr-website
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  tls:
+  - hosts:
+    - opengittr.com
+    - www.opengittr.com
+    - opengittr.io
+    - www.opengittr.io
+    - opengittr.dev
+    - www.opengittr.dev
+    - opengittr.net
+    - www.opengittr.net
+    - opengittr.org
+    - www.opengittr.org
+    secretName: opengittr-tls
+  rules:
+  - host: opengittr.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: opengittr-website
+            port:
+              number: 80
+  - host: www.opengittr.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: opengittr-website
+            port:
+              number: 80
+  - host: opengittr.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: opengittr-website
+            port:
+              number: 80
+  - host: www.opengittr.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: opengittr-website
+            port:
+              number: 80
+  - host: opengittr.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: opengittr-website
+            port:
+              number: 80
+  - host: www.opengittr.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: opengittr-website
+            port:
+              number: 80
+  - host: opengittr.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: opengittr-website
+            port:
+              number: 80
+  - host: www.opengittr.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: opengittr-website
+            port:
+              number: 80
+  - host: opengittr.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: opengittr-website
+            port:
+              number: 80
+  - host: www.opengittr.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: opengittr-website
+            port:
+              number: 80

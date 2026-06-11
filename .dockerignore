@@ -1,0 +1,10 @@
+node_modules
+dist
+dist-ssr
+k8s
+.git
+.gitignore
+.claude
+README.md
+*.md
+.DS_Store

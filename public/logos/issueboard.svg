@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Copy of issueboard's brand logo (docs/brand/logo.svg) with the dark-scheme
+       variant hardcoded: opengittr.com is always dark, so the OS-preference media
+       query in the original would render a near-invisible dark tile for light-mode users. -->
+  <rect fill="#ECEDEF" width="64" height="64" rx="15"/>
+  <rect fill="#1C1C1F" x="13" y="15" width="9" height="34" rx="4.5" opacity=".55"/>
+  <circle cx="32" cy="19.5" r="5" fill="#FF6B35"/>
+  <rect fill="#1C1C1F" x="27.5" y="28" width="9" height="21" rx="4.5"/>
+  <rect fill="#1C1C1F" x="42" y="15" width="9" height="24" rx="4.5" opacity=".55"/>
+</svg>

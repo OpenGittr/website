@@ -1,0 +1,44 @@
+# OpenGittr marketing website — opengittr.com (+ .io/.dev/.net/.org)
+# Prerendered static HTML served by zopdev/static-server on :8000 (no nginx).
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opengittr-website
+  labels:
+    app: opengittr-website
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: opengittr-website
+  template:
+    metadata:
+      labels:
+        app: opengittr-website
+    spec:
+      containers:
+      - name: website
+        image: gcr.io/opengittr/opengittr-website:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+          name: http
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "10m"
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
