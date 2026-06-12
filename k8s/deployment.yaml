@@ -1,9 +1,10 @@
-# OpenGittr marketing website — opengittr.com (+ .io/.dev/.net/.org)
+# OpenGittr marketing website — opengittr.com
 # Prerendered static HTML served by zopdev/static-server on :8000 (no nginx).
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: opengittr-website
+  namespace: opengittr
   labels:
     app: opengittr-website
 spec:

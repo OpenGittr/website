@@ -48,12 +48,26 @@ npm run build  # typecheck → client build → SSR build → prerender to dist/
 Output in `dist/`: one HTML file per route, hashed CSS in `assets/`, `sitemap.xml`,
 `robots.txt`. Preview with any static file server.
 
-## Docker
+## Deployment
+
+Automatic via GitHub Actions, same as the other OpenGittr products:
+
+- **CI** (`.github/workflows/ci.yml`) — every PR to `main` runs typecheck + build + prerender.
+- **Deploy** (`.github/workflows/deploy.yml`) — every push to `main` builds the
+  linux/amd64 image, pushes `gcr.io/opengittr/opengittr-website` (`:$SHA` + `:latest`),
+  applies `k8s/`, and waits for the rollout in the `opengittr` namespace on GKE.
+  Manual runs via *workflow_dispatch*.
+
+Required repo secrets: `GCP_PROJECT_ID`, `GCP_SA_KEY`, `GKE_CLUSTER`, `GKE_ZONE`.
+
+### Manual fallback
 
 ```bash
 # We develop on Mac; deployment is linux/amd64
 docker build --platform linux/amd64 -t gcr.io/opengittr/opengittr-website:latest .
 docker push gcr.io/opengittr/opengittr-website:latest
+kubectl apply -f k8s/
+kubectl rollout restart deployment/opengittr-website -n opengittr
 ```
 
 The container serves on port **8000**. HTML files carry no Cache-Control header so
@@ -61,16 +75,12 @@ browsers revalidate them (effectively no-cache); the content-hashed CSS is safe 
 cache anywhere. If a CDN is added in front, set `Cache-Control: no-cache` for
 `*.html` there.
 
-## Kubernetes
-
-```bash
-kubectl apply -f k8s/
-kubectl rollout restart deployment/opengittr-website   # after pushing a new image
-```
+### Kubernetes manifests
 
 - `deployment.yaml` — 2 replicas, liveness/readiness probe `GET /` on :8000
 - `service.yaml` — ClusterIP 80 → 8000
-- `ingress.yaml` — opengittr.{com,io,dev,net,org} (+ www), TLS via cert-manager
+- `ingress.yaml` — opengittr.com + www, TLS via cert-manager (other TLDs only
+  after their DNS points at the cluster — see comment in the file)
 
 ## Contact
 

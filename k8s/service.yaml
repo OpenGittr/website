@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: opengittr-website
+  namespace: opengittr
   labels:
     app: opengittr-website
 spec:

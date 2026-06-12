@@ -1,7 +1,12 @@
+# Hosts must match what's live: every host here lands on the single
+# opengittr-tls Let's Encrypt certificate, so adding a domain whose DNS does
+# not point at the cluster fails the cert order for ALL hosts (including .com).
+# Add .io/.dev/.net/.org back only after their DNS A records point here.
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: opengittr-website
+  namespace: opengittr
   annotations:
     kubernetes.io/ingress.class: "nginx"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
@@ -11,14 +16,6 @@ spec:
   - hosts:
     - opengittr.com
     - www.opengittr.com
-    - opengittr.io
-    - www.opengittr.io
-    - opengittr.dev
-    - www.opengittr.dev
-    - opengittr.net
-    - www.opengittr.net
-    - opengittr.org
-    - www.opengittr.org
     secretName: opengittr-tls
   rules:
   - host: opengittr.com
@@ -32,86 +29,6 @@ spec:
             port:
               number: 80
   - host: www.opengittr.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: opengittr-website
-            port:
-              number: 80
-  - host: opengittr.io
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: opengittr-website
-            port:
-              number: 80
-  - host: www.opengittr.io
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: opengittr-website
-            port:
-              number: 80
-  - host: opengittr.dev
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: opengittr-website
-            port:
-              number: 80
-  - host: www.opengittr.dev
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: opengittr-website
-            port:
-              number: 80
-  - host: opengittr.net
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: opengittr-website
-            port:
-              number: 80
-  - host: www.opengittr.net
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: opengittr-website
-            port:
-              number: 80
-  - host: opengittr.org
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: opengittr-website
-            port:
-              number: 80
-  - host: www.opengittr.org
     http:
       paths:
       - path: /
