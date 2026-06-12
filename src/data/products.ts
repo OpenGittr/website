@@ -72,4 +72,21 @@ export const products: Product[] = [
     logo: '/logos/rhealth.svg',
     hoverBorder: 'hover:border-emerald-500/40',
   },
+  {
+    id: 'bugtrack',
+    name: 'bugtrack',
+    kind: 'SaaS',
+    tagline: 'Catch production bugs and put them on your board',
+    description:
+      'Error capture that disappears into your existing workflow. The SDK captures, deduplicates, and enriches production errors — then files them as ready-to-triage issues on the board your team already uses.',
+    highlights: [
+      'Auto-captures exceptions, console errors, failed requests',
+      'Smart grouping with occurrence and affected-user counts',
+      'Files to GitHub, GitLab, Linear, or issueboard — two-way sync',
+    ],
+    href: 'https://bugtrack.dev',
+    linkLabel: 'bugtrack.dev',
+    logo: '/logos/bugtrack.svg',
+    hoverBorder: 'hover:border-amber-500/40',
+  },
 ]

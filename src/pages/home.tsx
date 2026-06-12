@@ -6,7 +6,7 @@ export const meta: PageMeta = {
   path: '/',
   title: 'OpenGittr — Tools for teams that build and run software',
   description:
-    'OpenGittr builds open source and SaaS developer tools: kubeui for Kubernetes monitoring, issueboard for whole-team issue tracking, and rhealth for uptime monitoring.',
+    'OpenGittr builds open source and SaaS developer tools: kubeui for Kubernetes monitoring, issueboard for whole-team issue tracking, rhealth for uptime monitoring, and bugtrack for production error capture.',
   jsonLd: [organizationJsonLd],
 }
 
@@ -187,7 +187,8 @@ export default function Home() {
             The portfolio
           </h2>
           <p className="mt-3 max-w-2xl text-zinc-400">
-            Three products today, more on the way. Each one stands on its own — pick what you need.
+            A growing family of focused tools, with more on the way. Each one stands on its own —
+            pick what you need.
           </p>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {products.map((p) => (

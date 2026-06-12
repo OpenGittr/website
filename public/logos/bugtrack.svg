@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+  <!-- Copy of bugtrack's brand mark, taken from its website favicon
+       (bugtrack/website/index.html): dark tile + amber stroke bug. -->
+  <rect width="24" height="24" rx="5" fill="#09090b"/>
+  <g fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round" transform="translate(2.4 2.4) scale(0.8)">
+    <rect x="8" y="7" width="8" height="12" rx="4"/>
+    <path d="M9 8a3 3 0 0 1 6 0"/>
+    <path d="M8 11H4M8 15H5M16 11h4M16 15h3M9.5 5 8 3M14.5 5 16 3M12 11v6"/>
+  </g>
+</svg>
