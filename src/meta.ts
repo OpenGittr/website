@@ -3,6 +3,10 @@ export const SITE = {
   name: 'OpenGittr',
   github: 'https://github.com/opengittr',
   contactEmail: 'hello@opengittr.com',
+  privacyEmail: 'privacy@opengittr.com',
+  securityEmail: 'security@opengittr.com',
+  /** Effective date shown on the legal pages. Bump when their text materially changes. */
+  legalEffectiveDate: 'June 16, 2026',
 } as const
 
 export type PageMeta = {

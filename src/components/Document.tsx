@@ -35,6 +35,8 @@ export default function Document({
         {!meta.noindex && <meta property="og:url" content={url} />}
         <meta name="twitter:card" content="summary" />
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        <link rel="icon" href="/logo-192.png" type="image/png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/logo-180.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

@@ -103,6 +103,22 @@ export default function Layout({ children }: { children: ReactNode }) {
                       Contact
                     </a>
                   </li>
+                  <li>
+                    <a
+                      href="/privacy"
+                      className="text-sm text-zinc-500 transition-colors hover:text-white"
+                    >
+                      Privacy
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/terms"
+                      className="text-sm text-zinc-500 transition-colors hover:text-white"
+                    >
+                      Terms
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

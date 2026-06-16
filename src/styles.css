@@ -13,3 +13,35 @@
   background-size: 56px 56px;
   mask-image: linear-gradient(to bottom, black 30%, transparent 95%);
 }
+
+/* Long-form prose for the legal pages (privacy, terms). Dark theme only. */
+@layer components {
+  .prose-og {
+    @apply text-[15px] leading-7 text-zinc-400;
+  }
+  .prose-og h2 {
+    @apply mt-12 mb-4 text-xl font-semibold tracking-tight text-white;
+  }
+  .prose-og h3 {
+    @apply mt-8 mb-3 text-base font-semibold tracking-tight text-zinc-200;
+  }
+  .prose-og p {
+    @apply my-4;
+  }
+  .prose-og ul,
+  .prose-og ol {
+    @apply my-4 list-outside space-y-2 pl-5;
+  }
+  .prose-og ul {
+    @apply list-disc;
+  }
+  .prose-og ol {
+    @apply list-decimal;
+  }
+  .prose-og a {
+    @apply font-medium text-white underline decoration-white/30 underline-offset-4 hover:decoration-white;
+  }
+  .prose-og strong {
+    @apply font-semibold text-zinc-200;
+  }
+}
