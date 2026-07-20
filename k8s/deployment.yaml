@@ -1,5 +1,5 @@
 # OpenGittr marketing website — opengittr.com
-# Prerendered static HTML served by zopdev/static-server on :8000 (no nginx).
+# Prerendered static HTML served by gostatic on :8000 (gofr metrics on :9090).
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -24,6 +24,8 @@ spec:
         ports:
         - containerPort: 8000
           name: http
+        - containerPort: 9090
+          name: metrics
         resources:
           requests:
             memory: "32Mi"
@@ -33,13 +35,13 @@ spec:
             cpu: "50m"
         livenessProbe:
           httpGet:
-            path: /
+            path: /.well-known/alive
             port: 8000
           initialDelaySeconds: 10
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /
+            path: /.well-known/alive
             port: 8000
           initialDelaySeconds: 5
           periodSeconds: 5

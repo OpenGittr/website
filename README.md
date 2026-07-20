@@ -7,7 +7,7 @@ Marketing website for OpenGittr — opengittr.com. Showcases the product portfol
 
 React 19 + Tailwind CSS 4 + Vite + TypeScript, **prerendered to pure static HTML at
 build time**. Production ships zero JavaScript: every route is a real
-`dist/<path>/index.html` with full content, served by `zopdev/static-server` (no nginx).
+`dist/<path>/index.html` with full content, served by `gostatic` (no nginx).
 
 ```
 .
@@ -21,7 +21,7 @@ build time**. Production ships zero JavaScript: every route is a real
 │   ├── entry-server.tsx  # Build-time render entry
 │   └── main.tsx          # Dev-only client entry
 ├── scripts/prerender.mjs # Renders routes to static HTML + sitemap, strips JS bundle
-├── Dockerfile            # Multi-stage: node build → zopdev/static-server:8000
+├── Dockerfile            # Multi-stage: node build → gostatic base image :8000
 └── k8s/                  # deployment, service, ingress
 ```
 
