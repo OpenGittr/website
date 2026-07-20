@@ -6,7 +6,7 @@ export const meta: PageMeta = {
   path: '/',
   title: 'OpenGittr — Tools for teams that build and run software',
   description:
-    'OpenGittr builds open source and SaaS developer tools: kubeui for Kubernetes monitoring, issueboard for whole-team issue tracking, rhealth for uptime monitoring, and bugtrack for production error capture.',
+    'OpenGittr builds open source and SaaS developer tools: kubeui for Kubernetes monitoring, ogtr for link shortening and campaign analytics, issueboard for whole-team issue tracking, rhealth for uptime monitoring, and bugtrack for production error capture.',
   jsonLd: [organizationJsonLd],
 }
 
@@ -47,7 +47,7 @@ function CheckIcon() {
   )
 }
 
-function KindBadge({ kind }: { kind: Product['kind'] }) {
+function KindBadge({ kind }: { kind: Product['kinds'][number] }) {
   const styles =
     kind === 'Open Source'
       ? 'border-emerald-500/25 bg-emerald-500/10 text-emerald-400'
@@ -71,7 +71,11 @@ function ProductCard({ product }: { product: Product }) {
     >
       <div className="flex items-start justify-between">
         <img src={product.logo} alt={`${product.name} logo`} width="48" height="48" />
-        <KindBadge kind={product.kind} />
+        <div className="flex gap-1.5">
+          {product.kinds.map((k) => (
+            <KindBadge key={k} kind={k} />
+          ))}
+        </div>
       </div>
 
       <h3 className="font-display mt-5 text-xl font-semibold text-white">{product.name}</h3>

@@ -7,7 +7,7 @@ export type Product = {
   /** Stable slug, also used as the React key. */
   id: string
   name: string
-  kind: 'Open Source' | 'SaaS'
+  kinds: ('Open Source' | 'SaaS')[]
   tagline: string
   description: string
   highlights: string[]
@@ -24,7 +24,7 @@ export const products: Product[] = [
   {
     id: 'kubeui',
     name: 'kubeui',
-    kind: 'Open Source',
+    kinds: ['Open Source'],
     tagline: 'Kubernetes monitoring without the ceremony',
     description:
       'A lightweight, local-first Kubernetes UI shipped as a single binary. Point it at your kubeconfig and get real-time visibility into every cluster — no agents, no install, no account.',
@@ -39,9 +39,26 @@ export const products: Product[] = [
     hoverBorder: 'hover:border-blue-500/40',
   },
   {
+    id: 'ogtr',
+    name: 'ogtr',
+    kinds: ['Open Source', 'SaaS'],
+    tagline: 'The link smartener — shorten, target, measure',
+    description:
+      'A link shortener built for marketing teams: branded short links and QR codes with campaign analytics, device and city targeting, and mobile deep links. MIT open source at its core — use the hosted service at ogtr.in or self-host it free.',
+    highlights: [
+      'Custom domains, QR codes, UTM campaign analytics',
+      'Device & city targeting with mobile app deep links',
+      'MIT open source — self-host free, forever',
+    ],
+    href: 'https://ogtr.in',
+    linkLabel: 'ogtr.in',
+    logo: '/logos/ogtr.svg',
+    hoverBorder: 'hover:border-indigo-500/40',
+  },
+  {
     id: 'issueboard',
     name: 'issueboard',
-    kind: 'SaaS',
+    kinds: ['SaaS'],
     tagline: 'Issue tracking for the whole team — not just the devs',
     description:
       'A minimal, fast tracker where support agents and product managers are first-class users. Viewers and reporters are free and unlimited; you only pay for editor seats.',
@@ -58,7 +75,7 @@ export const products: Product[] = [
   {
     id: 'rhealth',
     name: 'rhealth',
-    kind: 'SaaS',
+    kinds: ['SaaS'],
     tagline: 'Know your systems are up — before your users tell you',
     description:
       'Uptime monitoring for websites, APIs, and services from 40+ global regions. HTTP, SSL expiry, keywords, heartbeats, and TCP ports — with alerts on every channel your team lives in.',
@@ -75,7 +92,7 @@ export const products: Product[] = [
   {
     id: 'bugtrack',
     name: 'bugtrack',
-    kind: 'SaaS',
+    kinds: ['SaaS'],
     tagline: 'Catch production bugs and put them on your board',
     description:
       'Error capture that disappears into your existing workflow. The SDK captures, deduplicates, and enriches production errors — then files them as ready-to-triage issues on the board your team already uses.',
