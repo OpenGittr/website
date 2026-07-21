@@ -39,6 +39,23 @@ export const products: Product[] = [
     hoverBorder: 'hover:border-blue-500/40',
   },
   {
+    id: 'gostatic',
+    name: 'gostatic',
+    kinds: ['Open Source'],
+    tagline: 'The static server that caches correctly',
+    description:
+      'A single-binary static file server for SPAs and prerendered sites, built on GoFr. Sensible cache headers by default, real SPA fallback, gzip, and runtime config injection — with Prometheus metrics and health checks built in. Self-host, or use it as a Docker base image.',
+    highlights: [
+      'Smart Cache-Control: immutable hashed assets, no-cache HTML',
+      'Real SPA fallback + runtime config injection — build once, deploy anywhere',
+      'gofr metrics & health built in — drops straight into Kubernetes',
+    ],
+    href: 'https://github.com/opengittr/gostatic',
+    linkLabel: 'View on GitHub',
+    logo: '/logos/gostatic.svg',
+    hoverBorder: 'hover:border-teal-500/40',
+  },
+  {
     id: 'ogtr',
     name: 'ogtr',
     kinds: ['Open Source', 'SaaS'],
