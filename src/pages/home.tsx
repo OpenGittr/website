@@ -1,12 +1,12 @@
 import Layout, { GithubIcon } from '../components/Layout'
 import { SITE, organizationJsonLd, type PageMeta } from '../meta'
-import { products, type Product } from '../data/products'
+import { linkProps, products, type Product } from '../data/products'
 
 export const meta: PageMeta = {
   path: '/',
   title: 'OpenGittr — Tools for teams that build and run software',
   description:
-    'OpenGittr builds open source and SaaS developer tools: kubeui for Kubernetes monitoring, gostatic for static file serving, ogtr for link shortening and campaign analytics, issueboard for whole-team issue tracking, rhealth for uptime monitoring, and bugtrack for production error capture.',
+    'OpenGittr builds open source and SaaS developer tools: kubeui for Kubernetes monitoring, gostatic for static file serving, ogtr for link shortening and campaign analytics, issueboard for whole-team issue tracking, rhealth for uptime monitoring, bugtrack for production error capture, and Formatter, a JSON formatter and Markdown viewer for Chrome.',
   jsonLd: [organizationJsonLd],
 }
 
@@ -48,10 +48,11 @@ function CheckIcon() {
 }
 
 function KindBadge({ kind }: { kind: Product['kinds'][number] }) {
-  const styles =
-    kind === 'Open Source'
-      ? 'border-emerald-500/25 bg-emerald-500/10 text-emerald-400'
-      : 'border-sky-500/25 bg-sky-500/10 text-sky-400'
+  const styles = {
+    'Open Source': 'border-emerald-500/25 bg-emerald-500/10 text-emerald-400',
+    SaaS: 'border-sky-500/25 bg-sky-500/10 text-sky-400',
+    'Chrome Extension': 'border-violet-500/25 bg-violet-500/10 text-violet-400',
+  }[kind]
   return (
     <span
       className={`rounded-full border px-2.5 py-0.5 text-[11px] font-medium tracking-wide ${styles}`}
@@ -65,8 +66,7 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <a
       href={product.href}
-      target="_blank"
-      rel="noopener"
+      {...linkProps(product.href)}
       className={`group flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.06] ${product.hoverBorder}`}
     >
       <div className="flex items-start justify-between">

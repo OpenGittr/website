@@ -6,7 +6,7 @@ export const meta: PageMeta = {
   path: '/formatter/privacy',
   title: 'Formatter privacy policy — OpenGittr',
   description:
-    'Privacy policy for Formatter, the OpenGittr JSON formatter and Markdown viewer for Chrome. It collects no data, has no servers or analytics, and makes no network requests.',
+    'Privacy policy for Formatter, the OpenGittr JSON formatter and Markdown, YAML and CSV viewer for Chrome. It collects no data, has no servers or analytics, and makes no network requests.',
 }
 
 export default function FormatterPrivacy() {
@@ -15,13 +15,14 @@ export default function FormatterPrivacy() {
       <PageIntro
         title="Formatter privacy policy"
         sub="Formatter collects nothing. Here is exactly what it does with the files you open."
-        effectiveDate="October 27, 2026"
+        effectiveDate="October 30, 2026"
       />
       <Section className="prose-og pb-20 pt-4">
         <p>
           Formatter is a JSON formatter and Markdown (.md) viewer for Chrome, from OpenGittr. It shows
-          JSON as a collapsible, searchable tree and renders Markdown files GitHub-style. This policy
-          covers the extension only. For OpenGittr's hosted products, see the{' '}
+          JSON and YAML as a collapsible, searchable tree, renders Markdown files GitHub-style, and
+          shows CSV as a sortable table. This policy covers the extension only. For OpenGittr's
+          hosted products, see the{' '}
           <a href="/privacy">OpenGittr privacy policy</a>.
         </p>
 
@@ -33,10 +34,11 @@ export default function FormatterPrivacy() {
 
         <h2>How your files are handled</h2>
         <p>
-          When you open a JSON or Markdown document, Formatter reads it inside that browser tab to
-          display it. The content is never sent anywhere and is not stored once you close the tab.
-          On ordinary web pages Formatter does nothing: it only reads a page when Chrome shows it as
-          a raw text document, or when you pick a format from the toolbar button.
+          When you open a JSON, Markdown, YAML or CSV document, Formatter reads it inside that browser
+          tab to display it. Files you pick or drop on its “Open a file” page are read the same way,
+          locally in the browser. The content is never sent anywhere and is not stored once you close
+          the tab. On ordinary web pages Formatter does nothing: it only reads a page when Chrome shows
+          it as a raw text document, or when you pick a format from the toolbar button.
         </p>
 
         <h2>Settings</h2>
@@ -52,15 +54,15 @@ export default function FormatterPrivacy() {
             <strong>Storage</strong>: saves the settings above. Nothing else is stored.
           </li>
           <li>
-            <strong>Access to the pages you open</strong>: JSON and Markdown files can come from any
-            site or from your disk, so Formatter needs to be able to read them wherever you open them.
-            It processes them only inside the tab.
+            <strong>Access to the pages you open</strong>: these files can come from any site or from
+            your disk, so Formatter needs to be able to read them wherever you open them. It processes
+            them only inside the tab.
           </li>
         </ul>
 
         <h2>Third parties</h2>
         <p>
-          None. The libraries Formatter uses (marked, DOMPurify, and highlight.js) are bundled into
+          None. The libraries Formatter uses (marked, DOMPurify, highlight.js, and yaml) are bundled into
           the extension and run locally.
         </p>
 

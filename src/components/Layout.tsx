@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { SITE } from '../meta'
-import { products } from '../data/products'
+import { linkProps, products } from '../data/products'
 
 function GithubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -72,8 +72,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                     <li key={p.id}>
                       <a
                         href={p.href}
-                        target="_blank"
-                        rel="noopener"
+                        {...linkProps(p.href)}
                         className="text-sm text-zinc-500 transition-colors hover:text-white"
                       >
                         {p.name}

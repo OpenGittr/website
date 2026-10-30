@@ -7,17 +7,22 @@ export type Product = {
   /** Stable slug, also used as the React key. */
   id: string
   name: string
-  kinds: ('Open Source' | 'SaaS')[]
+  kinds: ('Open Source' | 'SaaS' | 'Chrome Extension')[]
   tagline: string
   description: string
   highlights: string[]
-  /** Primary destination: product site for SaaS, GitHub repo for open source. */
+  /** Primary destination: product site for SaaS, GitHub repo for open source, or a page on this site ('/…'). */
   href: string
   linkLabel: string
   /** The product's actual brand mark, copied from its repo into public/logos/. */
   logo: string
   /** Tailwind hover-border class matching the logo's accent color. */
   hoverBorder: string
+}
+
+/** External destinations open in a new tab; pages on this site open in place. */
+export function linkProps(href: string) {
+  return href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' }
 }
 
 export const products: Product[] = [
@@ -122,5 +127,22 @@ export const products: Product[] = [
     linkLabel: 'bugtrack.dev',
     logo: '/logos/bugtrack.svg',
     hoverBorder: 'hover:border-amber-500/40',
+  },
+  {
+    id: 'formatter',
+    name: 'Formatter',
+    kinds: ['Chrome Extension'],
+    tagline: 'Raw JSON, Markdown, YAML and CSV, readable in your browser',
+    description:
+      'A free Chrome extension that turns raw JSON and YAML into a searchable, collapsible tree, renders Markdown the way GitHub does, and shows CSV as a sortable table. Your files never leave the browser.',
+    highlights: [
+      'Search JSON keys and values, even inside collapsed sections',
+      'Click any value to copy its path, like $.data[0].email',
+      'YAML anchors and merge keys resolved; CSV you can sort and filter',
+    ],
+    href: '/formatter',
+    linkLabel: 'Learn more',
+    logo: '/logos/formatter.svg',
+    hoverBorder: 'hover:border-sky-500/40',
   },
 ]

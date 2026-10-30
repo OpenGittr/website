@@ -15,6 +15,8 @@ export type PageMeta = {
   title: string
   description: string
   jsonLd?: object[]
+  /** Share-preview image: a 1200×630 file in public/, as a site path ('/…'). */
+  image?: string
   noindex?: boolean
 }
 

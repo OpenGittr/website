@@ -33,7 +33,10 @@ export default function Document({
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         {!meta.noindex && <meta property="og:url" content={url} />}
-        <meta name="twitter:card" content="summary" />
+        {meta.image && <meta property="og:image" content={SITE.origin + meta.image} />}
+        {meta.image && <meta property="og:image:width" content="1200" />}
+        {meta.image && <meta property="og:image:height" content="630" />}
+        <meta name="twitter:card" content={meta.image ? 'summary_large_image' : 'summary'} />
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
         <link rel="icon" href="/logo-192.png" type="image/png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/logo-180.png" />
