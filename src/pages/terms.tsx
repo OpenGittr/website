@@ -22,7 +22,8 @@ export default function Terms() {
           These terms govern your use of OpenGittr's products and services ("the services"),
           operated by OpenGittr ("we", "us"). This includes our hosted products such as{' '}
           <a href="https://issueboard.dev">issueboard</a>,{' '}
-          <a href="https://rhealth.dev">rhealth</a>, and <a href="https://bugtrack.dev">bugtrack</a>,
+          <a href="https://rhealth.dev">rhealth</a>, <a href="https://bugtrack.dev">bugtrack</a>,
+          and <a href="https://analyser.dev">analyser</a>,
           and this site. By creating an account or using a service you agree to these terms. If you
           are accepting on behalf of an organization, you confirm you have authority to bind it. A
           product may publish additional, product-specific terms; where it does, those apply

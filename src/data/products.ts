@@ -129,6 +129,23 @@ export const products: Product[] = [
     hoverBorder: 'hover:border-amber-500/40',
   },
   {
+    id: 'analyser',
+    name: 'analyser',
+    kinds: ['SaaS'],
+    tagline: 'Website speed, SEO and AI-search checks — then keep watching',
+    description:
+      'Scan any page for performance, technical SEO and AI-search readiness in one go, and see what to fix first. Then monitor it: scheduled scans with history, budgets and regression alerts, site crawls, and Search Console data alongside.',
+    highlights: [
+      'Lighthouse performance, ~30 SEO checks and GEO readiness in one scan',
+      'Scheduled scans, budgets and alerts when a page regresses',
+      'AI citation tracking across ChatGPT, Claude, Perplexity and Gemini',
+    ],
+    href: 'https://analyser.dev',
+    linkLabel: 'analyser.dev',
+    logo: '/logos/analyser.svg',
+    hoverBorder: 'hover:border-sky-500/40',
+  },
+  {
     id: 'formatter',
     name: 'Formatter',
     kinds: ['Chrome Extension'],

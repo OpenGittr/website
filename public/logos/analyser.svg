@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Copy of analyser.dev's brand mark, taken from its website favicon
+       (web-analyser/frontend/website/public/favicon.svg): an "a" whose bowl is a
+       score ring, with a green status dot. -->
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <circle cx="27" cy="33" r="11.5" fill="none" stroke="#334155" stroke-width="6.5"/>
+  <circle cx="27" cy="33" r="11.5" fill="none" stroke="#0ea5e9" stroke-width="6.5" stroke-linecap="round" stroke-dasharray="54 72.3" transform="rotate(-90 27 33)"/>
+  <rect x="35.25" y="18.25" width="6.5" height="29.5" rx="3.25" fill="#fff"/>
+  <circle cx="48.5" cy="43.25" r="4.5" fill="#22c55e"/>
+</svg>

@@ -6,7 +6,7 @@ export const meta: PageMeta = {
   path: '/',
   title: 'OpenGittr — Tools for teams that build and run software',
   description:
-    'OpenGittr builds open source and SaaS developer tools: kubeui for Kubernetes monitoring, gostatic for static file serving, ogtr for link shortening and campaign analytics, issueboard for whole-team issue tracking, rhealth for uptime monitoring, bugtrack for production error capture, and Formatter, a JSON formatter and Markdown viewer for Chrome.',
+    'OpenGittr builds open source and SaaS developer tools: kubeui for Kubernetes monitoring, gostatic for static file serving, ogtr for link shortening and campaign analytics, issueboard for whole-team issue tracking, rhealth for uptime monitoring, bugtrack for production error capture, analyser for website speed, SEO and AI-search checks, and Formatter, a JSON formatter and Markdown viewer for Chrome.',
   jsonLd: [organizationJsonLd],
 }
 

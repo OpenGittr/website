@@ -22,8 +22,8 @@ export default function Privacy() {
           OpenGittr ("OpenGittr", "we", "us") builds developer tools, both open source and hosted
           (SaaS). This policy explains how we handle personal data across our products — including{' '}
           <a href="https://issueboard.dev">issueboard</a>,{' '}
-          <a href="https://rhealth.dev">rhealth</a>, <a href="https://bugtrack.dev">bugtrack</a>,
-          and <a href="https://github.com/opengittr/kubeui">kubeui</a> — and on this site,{' '}
+          <a href="https://rhealth.dev">rhealth</a>, <a href="https://bugtrack.dev">bugtrack</a>,{' '}
+          <a href="https://analyser.dev">analyser</a>, and <a href="https://github.com/opengittr/kubeui">kubeui</a> — and on this site,{' '}
           opengittr.com. A specific product may publish its own, more detailed policy on its own
           site; where it does, that product policy governs that product, and this policy covers
           everything else and the matters common to all of them. Several of our products are in
