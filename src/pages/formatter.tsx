@@ -137,7 +137,7 @@ export default function Formatter() {
         <p className="mt-4 text-lg leading-8 text-zinc-400">
           A JSON formatter and Markdown viewer for Chrome, with YAML and CSV too.
         </p>
-        <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-zinc-500">
+        <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-zinc-400">
           Open a JSON API response, a README or a Kubernetes manifest in Chrome and you usually get a
           wall of raw text. With Formatter installed, JSON and YAML show as a searchable, collapsible
           tree, Markdown renders the way it does on GitHub, and CSV becomes a table you can sort and
