@@ -4,8 +4,9 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import Document from './components/Document'
 import { routes } from './routes'
 import { SITE } from './meta'
+import { products } from './data/products'
 
-export { routes, SITE }
+export { routes, SITE, products }
 
 export function render(path: string, cssHref: string): string {
   const route = routes.find((r) => r.meta.path === path)

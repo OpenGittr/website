@@ -18,8 +18,10 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM opengittr/gostatic:v0.1.0
+FROM opengittr/gostatic:v0.2.0
 # gostatic serves /srv/static on :8000 (metrics :9090); ENTRYPOINT is baked in.
 ENV SPA_MODE=false
+# The image's bundled configs/.env turns the security-headers preset off; turn it on.
+ENV SECURITY_HEADERS=true
 COPY --from=build --chown=nonroot:nonroot /build/dist/ /srv/static/
 EXPOSE 8000 9090

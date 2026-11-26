@@ -9,7 +9,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = join(root, 'dist')
 const assetsDir = join(dist, 'assets')
 
-const { render, routes, SITE } = await import(join(root, 'dist-ssr', 'entry-server.js'))
+const { render, routes, SITE, products } = await import(join(root, 'dist-ssr', 'entry-server.js'))
 
 // Locate the content-hashed stylesheet emitted by the client build.
 const cssFile = readdirSync(assetsDir).find((f) => f.endsWith('.css'))
@@ -49,8 +49,30 @@ writeFileSync(
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
 )
 
+// llms.txt — what OpenGittr is and its products, derived from src/data/products.ts
+// so it always matches the home page.
+const abs = (href) => (href.startsWith('/') ? SITE.origin + href : href)
+const llms = [
+  `# ${SITE.name}`,
+  '',
+  `> ${SITE.name} builds open-source and SaaS developer tools: focused products for teams that build and run software, open source where it matters and hosted where it helps.`,
+  '',
+  '## Products',
+  '',
+  ...products.map((p) => `- [${p.name}](${abs(p.href)}): ${p.tagline}. ${p.description}`),
+  '',
+  '## Company',
+  '',
+  `- [Home](${SITE.origin}/)`,
+  `- [GitHub](${SITE.github})`,
+  '- [LinkedIn](https://www.linkedin.com/company/opengittr)',
+  `- Contact: ${SITE.contactEmail}`,
+  '',
+].join('\n')
+writeFileSync(join(dist, 'llms.txt'), llms)
+
 rmSync(join(root, 'dist-ssr'), { recursive: true, force: true })
 
 console.log(`Prerendered ${written.length} pages (css: ${cssHref}):`)
 for (const p of written) console.log(`  ${p.path}${p.noindex ? '  (noindex)' : ''}`)
-console.log('Wrote sitemap.xml')
+console.log('Wrote sitemap.xml and llms.txt')

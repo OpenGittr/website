@@ -60,7 +60,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
             <div className="max-w-xs">
               <Logo />
-              <p className="mt-3 text-sm leading-relaxed text-zinc-500">
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400">
                 Sharp, focused tools for teams that build and run software.
               </p>
             </div>
