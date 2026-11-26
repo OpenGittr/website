@@ -6,7 +6,7 @@ export const meta: PageMeta = {
   path: '/',
   title: 'OpenGittr — Tools for teams that build and run software',
   description:
-    'OpenGittr builds open source and SaaS developer tools: kubeui for Kubernetes monitoring, gostatic for static file serving, ogtr for link shortening and campaign analytics, issueboard for whole-team issue tracking, rhealth for uptime monitoring, bugtrack for production error capture, analyser for website speed, SEO and AI-search checks, and Formatter, a JSON formatter and Markdown viewer for Chrome.',
+    'OpenGittr builds open-source and SaaS developer tools: uptime monitoring, issue tracking, link shortening, website checks and more.',
   jsonLd: [organizationJsonLd],
 }
 
@@ -80,7 +80,7 @@ function ProductCard({ product }: { product: Product }) {
 
       <h3 className="font-display mt-5 text-xl font-semibold text-white">{product.name}</h3>
       <p className="mt-1 text-sm font-medium text-zinc-400">{product.tagline}</p>
-      <p className="mt-3 text-sm leading-relaxed text-zinc-500">{product.description}</p>
+      <p className="mt-3 text-sm leading-relaxed text-zinc-400">{product.description}</p>
 
       <ul className="mt-4 space-y-2">
         {product.highlights.map((h) => (
@@ -217,7 +217,7 @@ export default function Home() {
                   0{i + 1}
                 </span>
                 <h3 className="mt-2 text-lg font-semibold text-white">{p.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-500">{p.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-zinc-400">{p.body}</p>
               </div>
             ))}
           </div>

@@ -16,6 +16,8 @@ export default function Document({
   children: ReactNode
 }) {
   const url = SITE.origin + (meta.path === '/' ? '/' : meta.path)
+  // Pages without their own share image use the site-wide one.
+  const image = SITE.origin + (meta.image ?? '/og.png')
   return (
     <html lang="en">
       <head>
@@ -33,19 +35,19 @@ export default function Document({
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         {!meta.noindex && <meta property="og:url" content={url} />}
-        {meta.image && <meta property="og:image" content={SITE.origin + meta.image} />}
-        {meta.image && <meta property="og:image:width" content="1200" />}
-        {meta.image && <meta property="og:image:height" content="630" />}
-        <meta name="twitter:card" content={meta.image ? 'summary_large_image' : 'summary'} />
+        <meta property="og:image" content={image} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={image} />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
-        <link rel="icon" href="/logo-192.png" type="image/png" sizes="192x192" />
-        <link rel="apple-touch-icon" href="/logo-180.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
-        />
+        <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
+        <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo-180.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="stylesheet" href={cssHref} />
         {meta.jsonLd?.map((obj, i) => (
           <script

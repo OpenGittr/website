@@ -25,7 +25,7 @@ export const organizationJsonLd = {
   '@type': 'Organization',
   name: 'OpenGittr',
   url: SITE.origin,
-  logo: `${SITE.origin}/logo.svg`,
-  sameAs: [SITE.github],
+  logo: `${SITE.origin}/logo-512.png`,
+  sameAs: ['https://www.linkedin.com/company/opengittr', SITE.github, 'https://x.com/OpenGittr'],
   contactPoint: [{ '@type': 'ContactPoint', contactType: 'general', email: SITE.contactEmail }],
 }
