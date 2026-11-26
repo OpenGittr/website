@@ -21,7 +21,7 @@ export function PageIntro({
       </h1>
       <p className="mt-5 text-lg leading-8 text-zinc-400">{sub}</p>
       {effectiveDate && (
-        <p className="mt-4 text-sm text-zinc-500">Effective date: {effectiveDate}</p>
+        <p className="mt-4 text-sm text-zinc-400">Effective date: {effectiveDate}</p>
       )}
     </Section>
   )

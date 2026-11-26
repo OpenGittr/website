@@ -73,7 +73,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                       <a
                         href={p.href}
                         {...linkProps(p.href)}
-                        className="text-sm text-zinc-500 transition-colors hover:text-white"
+                        className="text-sm text-zinc-400 transition-colors hover:text-white"
                       >
                         {p.name}
                       </a>
@@ -89,7 +89,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                       href={SITE.github}
                       target="_blank"
                       rel="noopener"
-                      className="text-sm text-zinc-500 transition-colors hover:text-white"
+                      className="text-sm text-zinc-400 transition-colors hover:text-white"
                     >
                       GitHub
                     </a>
@@ -97,7 +97,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                   <li>
                     <a
                       href={`mailto:${SITE.contactEmail}`}
-                      className="text-sm text-zinc-500 transition-colors hover:text-white"
+                      className="text-sm text-zinc-400 transition-colors hover:text-white"
                     >
                       Contact
                     </a>
@@ -105,7 +105,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                   <li>
                     <a
                       href="/privacy"
-                      className="text-sm text-zinc-500 transition-colors hover:text-white"
+                      className="text-sm text-zinc-400 transition-colors hover:text-white"
                     >
                       Privacy
                     </a>
@@ -113,7 +113,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                   <li>
                     <a
                       href="/terms"
-                      className="text-sm text-zinc-500 transition-colors hover:text-white"
+                      className="text-sm text-zinc-400 transition-colors hover:text-white"
                     >
                       Terms
                     </a>
@@ -122,7 +122,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               </div>
             </div>
           </div>
-          <p className="mt-12 text-xs text-zinc-600">
+          <p className="mt-12 text-xs text-zinc-400">
             &copy; 2026 OpenGittr. Built with care for people who ship.
           </p>
         </div>

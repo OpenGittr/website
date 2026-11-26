@@ -105,11 +105,11 @@ function ProductCard({ product }: { product: Product }) {
 function ComingSoonCard() {
   return (
     <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-white/15 p-6 text-center">
-      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-2xl text-zinc-500">
+      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-2xl text-zinc-400">
         +
       </div>
       <h3 className="font-display mt-5 text-xl font-semibold text-zinc-400">More in the works</h3>
-      <p className="mt-3 max-w-[26ch] text-sm leading-relaxed text-zinc-600">
+      <p className="mt-3 max-w-[26ch] text-sm leading-relaxed text-zinc-400">
         New tools are brewing. Follow us on GitHub to catch them as they ship.
       </p>
       <a
@@ -213,7 +213,7 @@ export default function Home() {
           <div className="mt-12 grid gap-10 sm:grid-cols-3">
             {principles.map((p, i) => (
               <div key={p.title}>
-                <span className="font-display text-sm font-semibold text-zinc-600">
+                <span className="font-display text-sm font-semibold text-zinc-400">
                   0{i + 1}
                 </span>
                 <h3 className="mt-2 text-lg font-semibold text-white">{p.title}</h3>

@@ -14,7 +14,7 @@ export default function NotFound() {
       <section className="mx-auto flex max-w-6xl flex-col items-center px-5 py-32 text-center sm:py-44">
         <p className="font-display text-7xl font-bold text-white/10">404</p>
         <h1 className="font-display mt-4 text-2xl font-semibold text-white">Page not found</h1>
-        <p className="mt-3 max-w-sm text-sm text-zinc-500">
+        <p className="mt-3 max-w-sm text-sm text-zinc-400">
           The page you were looking for doesn't exist or has moved.
         </p>
         <a
